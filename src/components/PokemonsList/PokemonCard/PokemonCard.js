@@ -2,7 +2,7 @@ import Link from "next/link";
 import CardSkeleton from "./CardSkeleton";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-const { Card, CardBody, Image, Box, Heading, Flex, Tag, Stat, StatNumber, StatHelpText, Center } = require("@chakra-ui/react")
+const { Card, CardBody, Image, Box, Heading, Flex, Tag, Stat, StatNumber, StatHelpText, Center, Divider } = require("@chakra-ui/react")
 
 
 const PokemonCard = ({pokemonURL}) => {
@@ -25,7 +25,7 @@ const PokemonCard = ({pokemonURL}) => {
     if (isLoading) return <Center><CardSkeleton /></Center>
 
     if (error) return <>ERROR</>
-    console.log(data);
+ 
     return (
         <Box maxW={'300px'}>
             <Link href={'/pokemons/' + pokemonId}>
@@ -33,6 +33,7 @@ const PokemonCard = ({pokemonURL}) => {
                     <Image src={data.sprites.other["official-artwork"].front_default} />
                     <CardBody>
                         <Heading size={'md'} >{data.name}</Heading>
+                        <Divider marginY={2} />
                         <Flex>
                             <Stat>
                                 <StatNumber>{data.height}</StatNumber>

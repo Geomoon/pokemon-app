@@ -1,6 +1,5 @@
-import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spacer, Tag, Text, WrapItem } from "@chakra-ui/react";
 import Logo from "./Logo";
-import Searchbox from "./Searchbox";
 
 const Header = () => {
     return (
@@ -9,10 +8,10 @@ const Header = () => {
                 <Logo />
             </Box>
             <Spacer />
-            <Box>
-                <Searchbox />
-            </Box>
-            <Spacer />
+            
+            <WrapItem>
+                <Text>Desarrollado por <Tag>Carlos Luna</Tag></Text>
+            </WrapItem>
         </Flex>
     )
 }
