@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 const Pokemon = ({pokemon}) => {
@@ -6,7 +7,9 @@ const Pokemon = ({pokemon}) => {
     const {id} = router.query;
 
     return (
-        <h3>POKEMON CARD: {id}</h3>
+        <Box padding={20} >
+            <div>{id}</div>
+        </Box>
     )
 }
 
