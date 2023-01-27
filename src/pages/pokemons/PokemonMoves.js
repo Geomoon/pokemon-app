@@ -6,7 +6,7 @@ const PokemonMoves = ({moves}) => {
             <Heading size={"md"}>Movimientos</Heading>
             <Spacer height={10} />
             <List overflowY={"scroll"} maxH={"32vh"}>
-                { moves.map((item, index) => <ListItem key={index} paddingX={6} paddingY={2} >{item}</ListItem>) }
+                { moves && moves.map((item, index) => <ListItem key={index} paddingX={6} paddingY={2} >{item}</ListItem>) }
             </List>
         </Box>
     );

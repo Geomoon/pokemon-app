@@ -17,12 +17,12 @@ const PokemonInfo = ({tipos, habilidades, peso, altura}) => {
             <Spacer height={6} />
             <Heading size={"md"}>Tipo</Heading>
             <Flex gap={'2'} marginTop={4}>
-                { tipos.map((item, index) => <Tag key={index}>{item}</Tag>) }
+                { tipos && tipos.map((item, index) => <Tag key={index}>{item}</Tag>) }
             </Flex>
             <Spacer height={6} />
             <Heading size={"md"}>Habilidades</Heading>
             <Flex gap={'2'} marginTop={4}>
-                { habilidades.map((item, index) => <Tag key={index}>{item}</Tag>) }
+                { habilidades && habilidades.map((item, index) => <Tag key={index}>{item}</Tag>) }
             </Flex>
         </Box>
     )

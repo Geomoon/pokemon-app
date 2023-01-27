@@ -45,7 +45,7 @@ const PokemonsList = () => {
     return (
         <Box padding={2}>
             <SimpleGrid minChildWidth={'260px'} spacing={'20px'}>
-                { data.results.map((item, index) => <PokemonCard key={index} pokemonURL={item.url} />) }
+                { data && data.results.map((item, index) => <PokemonCard key={index} pokemonURL={item.url} />) }
             </SimpleGrid>
             <PaginationButtons onNext={toNextPage} onPrevious={toPreviousPage} hasNext={data.next !== null} hasPrevious={data.previous !== null}/>
         </Box>
