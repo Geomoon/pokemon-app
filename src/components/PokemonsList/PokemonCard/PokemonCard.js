@@ -12,6 +12,10 @@ const PokemonCard = ({pokemonURL}) => {
     const urlSplit = pokemonURL.split("/");
     const pokemonId = urlSplit.slice(-2)[0];
 
+    const getPokemon = async () => {
+        const result = await fetch(pokemonURL);
+        return result.json();
+    }
 
     const {isLoading, data, error} = useQuery({
         queryKey: ["pokemon", pokemonId],
