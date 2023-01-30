@@ -36,7 +36,7 @@ const PokemonEvolution = ({evolutionId}) => {
     }
 
     return (
-            <SimpleGrid minChildWidth={'260px'} spacing={'20px'}>
+            <SimpleGrid columns={4} justifyItems={"center"} minChildWidth={'260px'} spacing={'20px'}>
                 {
                     loadNames().map((item, index) => <EvolutionCard key={index} nombre={item}/>)
                 }

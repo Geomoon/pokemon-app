@@ -57,15 +57,14 @@ const Pokemon = ({pokemon}) => {
             </SimpleGrid>
         </Center>
         <Spacer height={10} />
-        <Center>
-
-        <Container paddingY={4} >
-            <Heading size={"md"}>Evoluciones</Heading>
-           {
-               evolutionId !== undefined && <PokemonEvolution evolutionId={evolutionId} />
-            }
-        </Container>
-            </Center>
+        <Center bg={"red"}>
+            <Box minW={"80vw"} paddingY={4} bg={"white"}>
+                <Heading size={"md"} paddingY={4} >Evoluciones</Heading>
+                {
+                    evolutionId !== undefined && <PokemonEvolution evolutionId={evolutionId} />
+                }
+            </Box>
+        </Center>
         </>
     )
 }
