@@ -39,11 +39,11 @@ const PokemonsList = () => {
     }
     
     if (error) {
-        return <div>ERROR: </div>
+        return <div>ERROR</div>
     }
     
     return (
-        <Box padding={2}>
+        <Box padding={2} >
             <SimpleGrid minChildWidth={'260px'} spacing={'20px'}>
                 { data && data.results.map((item, index) => <PokemonCard key={index} pokemonURL={item.url} />) }
             </SimpleGrid>
@@ -54,7 +54,7 @@ const PokemonsList = () => {
 
 const PaginationButtons = ({onNext, onPrevious, hasNext, hasPrevious}) => {
     return (
-        <Flex marginTop={10} align={"center"} gap={10}>
+        <Flex marginTop={10} align={"center"} gap={10} >
             <Spacer />
             <IconButton isDisabled={!hasPrevious} aria-label='Anterior' icon={<ArrowBackIcon />} onClick={onPrevious} />
             <IconButton isDisabled={!hasNext} aria-label='Siguiente' icon={<ArrowForwardIcon />} onClick={onNext} />

@@ -29,7 +29,7 @@ const EvolutionCard = ({nombre}) => {
             <Card>
                 <Image src={data.sprites.other["official-artwork"].front_default} />
                     <CardBody>
-                        <Heading size={'md'} >{nombre}</Heading>
+                        <Heading size={'md'} textAlign={"center"}>{nombre}</Heading>
                     </CardBody>
             </Card>
         </Box>

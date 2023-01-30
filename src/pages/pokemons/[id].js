@@ -1,5 +1,5 @@
 import CardSkeleton from "@/components/PokemonsList/PokemonCard/CardSkeleton";
-import { Box, Center, Container, Heading, SimpleGrid, Spacer } from "@chakra-ui/react";
+import { Box, Center, Container, Divider, Heading, SimpleGrid, Spacer } from "@chakra-ui/react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -44,7 +44,7 @@ const Pokemon = ({pokemon}) => {
     if (isSuccess) findEvolutionID();
  
     return (<>
-        <Center bg={"blue"} padding={20} >
+        <Center padding={20} bg={"brand.100"} >
             <SimpleGrid minChildWidth={"300px"} columns={3} padding={2} maxW={"80vw"} justifyItems={"center"} >
                 <PokemonSimpleCard 
                     nombre={data.name} 
@@ -56,10 +56,11 @@ const Pokemon = ({pokemon}) => {
                 <PokemonMoves moves={data.moves.map((item) => item.move.name)} />
             </SimpleGrid>
         </Center>
+        <Divider/>
         <Spacer height={10} />
-        <Center bg={"red"}>
-            <Box minW={"80vw"} paddingY={4} bg={"white"}>
-                <Heading size={"md"} paddingY={4} >Evoluciones</Heading>
+        <Center >
+            <Box minW={"80vw"} paddingY={4} >
+                <Heading textAlign={"center"} size={"md"} paddingY={4} >Evoluciones</Heading>
                 {
                     evolutionId !== undefined && <PokemonEvolution evolutionId={evolutionId} />
                 }

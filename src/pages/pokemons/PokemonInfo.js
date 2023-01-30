@@ -6,11 +6,11 @@ const PokemonInfo = ({tipos, habilidades, peso, altura}) => {
         <Box paddingY={4} maxW={300}>
              <Flex direction={"column"} >
                 <Stat>
-                    <StatNumber>Altura</StatNumber>
+                    <Heading size={"md"}>Altura</Heading>
                     <StatHelpText>{altura}</StatHelpText>
                 </Stat>
                 <Stat>
-                    <StatNumber>Peso</StatNumber>
+                    <Heading size={"md"}>Peso</Heading>
                     <StatHelpText>{peso}</StatHelpText>
                 </Stat>
             </Flex>

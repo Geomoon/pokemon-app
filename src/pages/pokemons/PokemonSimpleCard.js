@@ -1,4 +1,4 @@
-const { Box, Card, Image, CardBody, Heading, Flex, Stat, StatNumber, StatHelpText } = require("@chakra-ui/react")
+const { Box, Card, Image, CardBody, Heading } = require("@chakra-ui/react")
 
 const PokemonSimpleCard = ({nombre, imgSrc}) => {
 
@@ -7,7 +7,7 @@ const PokemonSimpleCard = ({nombre, imgSrc}) => {
             <Card>
                 <Image src={imgSrc} />
                 <CardBody>
-                    <Heading size={'xl'} >{nombre}</Heading>
+                    <Heading size={'xl'} textAlign={"end"} >{nombre}</Heading>
                 </CardBody>
             </Card>
         </Box>
