@@ -3,7 +3,7 @@ const { Box, Card, Image, CardBody, Heading, Flex, Stat, StatNumber, StatHelpTex
 const PokemonSimpleCard = ({nombre, imgSrc}) => {
 
     return (
-        <Box maxW={300}>
+        <Box maxW={300} paddingX={4}>
             <Card>
                 <Image src={imgSrc} />
                 <CardBody>

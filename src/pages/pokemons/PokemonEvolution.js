@@ -1,23 +1,20 @@
 import CardSkeleton from "@/components/PokemonsList/PokemonCard/CardSkeleton";
 import { Center, SimpleGrid } from "@chakra-ui/react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
 import EvolutionCard from "./EvolutionCard";
 
-const PokemonEvolution = ({pokemonId}) => {
+const PokemonEvolution = ({evolutionId}) => {
     
     const queryClient = useQueryClient();
 
-    const [names, setNames] = useState([]);
-    
     const getPokemon = async () => {
-        const url = `https://pokeapi.co/api/v2/evolution-chain/${pokemonId}`;
+        const url = `https://pokeapi.co/api/v2/evolution-chain/${evolutionId}`;
         const result = await fetch(url);
         return result.json();
     }
 
     const {isLoading, data, error, isSuccess} = useQuery({
-        queryKey: ["pokemon-evolution", pokemonId],
+        queryKey: ["pokemon-evolution", evolutionId],
         queryFn: getPokemon,
     });
 
@@ -27,7 +24,6 @@ const PokemonEvolution = ({pokemonId}) => {
         let evoData = data.chain;
 
         do {
-            let evoDetails = evoData['evolution_details'][0];
             list.push(evoData.species.name);
 
             evoData = evoData['evolves_to'][0];
