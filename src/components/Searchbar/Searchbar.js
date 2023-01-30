@@ -18,7 +18,7 @@ const Searchbar = ({onSearch}) => {
             <InputGroup>
                 <Input placeholder='Buscar pokémons' onKeyUp={onKeyUp} />
                 <InputRightElement children={ 
-                    <IconButton aria-label='Search pokemon' icon={<SearchIcon />} onClick={(e) => onSearch(input)} />
+                    <IconButton aria-label='Search pokemon' onClick={(e) => onSearch(input)}><SearchIcon /></IconButton>
                     } />
             </InputGroup>
         </Box>
